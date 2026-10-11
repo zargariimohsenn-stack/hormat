@@ -1,226 +1,457 @@
+
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#171516">
 <title>ثبت‌نام سوگواره حرمت | فاطمیه</title>
 <style>
-  :root { --ink:#eee7e3; --red:#a63d43; --red2:#79282e; --paper:rgba(24,22,23,.97); }
-  * { box-sizing:border-box; }
-  body {
-    margin:0; min-height:100vh; font-family:Tahoma, Arial, sans-serif; color:var(--ink);
-    background: radial-gradient(ellipse at top, #302729 0%, #171516 48%, #0d0c0d 100%);
-    padding:24px 14px 40px;
-  }
-  .wrap { width:min(760px,100%); margin:auto; }
-  .panel {
-    background:var(--paper); border:1px solid rgba(166,61,67,.35); border-radius:18px;
-    box-shadow:0 18px 55px rgba(0,0,0,.48); overflow:hidden;
-  }
-  header { text-align:center; padding:28px 20px 22px; border-bottom:1px solid rgba(166,61,67,.35); }
-  .eyebrow { margin:0 0 8px; font-size:14px; letter-spacing:.5px; }
-  h1 { margin:0; color:var(--red); font-size:clamp(30px,6vw,48px); line-height:1.4; }
-  .subtitle { margin:7px 0 0; font-size:15px; }
-  .ornament { width:84%; margin:18px auto 0; border-top:1px solid #675052; position:relative; }
-  .ornament:before,.ornament:after { content:"✥"; position:absolute; top:-13px; color:#9c7779; font-size:19px; }
-  .ornament:before { right:-7px; } .ornament:after { left:-7px; }
-  form { padding:24px; }
-  .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:17px; }
-  .field { display:flex; flex-direction:column; gap:8px; }
-  .wide { grid-column:1/-1; }
-  label { font-size:14px; font-weight:bold; }
-  input,select {
-    width:100%; min-height:48px; padding:12px 13px; border-radius:10px;
-    border:1px solid #514448; background:#211d1f; color:#f2e9e7;
-    font:inherit; outline:none;
-  }
-  input:focus,select:focus { border-color:var(--red); box-shadow:0 0 0 3px rgba(139,55,56,.12); }
-  .counts { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-  .hint { font-size:12px; color:#c2b2b1; line-height:1.9; margin:0; }
-  .counter { padding:11px 13px; background:rgba(166,61,67,.17); border-radius:10px; font-size:13px; }
-  .counter strong { color:var(--red2); }
-  .error { display:none; color:#8c2528; background:#3a2022; padding:10px 12px; border-radius:9px; font-size:13px; margin-top:14px; }
-  .actions { display:flex; gap:10px; margin-top:20px; flex-wrap:wrap; }
-  button { border:0; border-radius:11px; padding:14px 18px; font:inherit; cursor:pointer; }
-  .submit { flex:1; background:var(--red); color:#fff; font-weight:bold; }
-  .submit:hover { background:var(--red2); }
-  .reset { background:#393033; color:#f0e6e4; }
-  .foot { text-align:center; font-size:12px; line-height:1.9; padding:0 24px 22px; color:#b6a5a4; }
-  #receiptArea { display:none; margin-top:20px; }
-  .receipt { background:#211d1f; border:2px solid var(--red); border-radius:16px; padding:24px; }
-  .receipt h2 { margin:0 0 4px; text-align:center; color:var(--red); }
-  .receipt .small { text-align:center; font-size:12px; margin:0 0 18px; }
-  .receiptRows { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-  .receiptItem { border-bottom:1px dashed #5b484c; padding:9px 0; font-size:14px; }
-  .receiptItem b { display:block; font-size:12px; color:#c4adad; margin-bottom:5px; }
-  .receiptActions { display:flex; gap:10px; margin-top:15px; }
-  .receiptActions button { flex:1; background:#393033; color:#fff; }
-  .receiptActions .download { background:var(--red); }
-  @media(max-width:560px) {
-    body { padding:12px 8px 25px; }
-    form { padding:18px 15px; }
-    .grid,.counts,.receiptRows { grid-template-columns:1fr; }
-    .wide { grid-column:auto; }
-    header { padding:23px 12px 18px; }
-    .receiptActions { flex-direction:column; }
-  }
-  @media print {
-    body { background:white; padding:0; }
-    .panel, form, header, .foot { display:none !important; }
-    #receiptArea { display:block !important; margin:0; }
-    .receipt { border:2px solid #333; box-shadow:none; }
-    .receiptActions { display:none; }
-  }
+:root{--ink:#eee7e3;--red:#a63d43;--red2:#79282e;--paper:#181617}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Tahoma,Arial,sans-serif;color:var(--ink);background:radial-gradient(ellipse at top,#302729,#171516 48%,#0d0c0d);padding:22px 12px 40px}
+.wrap{width:min(760px,100%);margin:auto}
+.panel{background:rgba(24,22,23,.97);border:1px solid #63383c;border-radius:18px;box-shadow:0 18px 55px #0008;overflow:hidden;margin-bottom:18px}
+header{text-align:center;padding:27px 18px 22px;border-bottom:1px solid #63383c}
+.eyebrow{font-size:14px;margin:0 0 8px}
+h1{margin:0;color:var(--red);font-size:clamp(30px,6vw,46px);line-height:1.5}
+.subtitle{font-size:15px;margin:7px 0 0}
+.ornament{width:84%;margin:18px auto 0;border-top:1px solid #675052;position:relative}
+.ornament:before,.ornament:after{content:"✥";position:absolute;top:-13px;color:#9c7779;font-size:19px}
+.ornament:before{right:-7px}.ornament:after{left:-7px}
+form{padding:23px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:8px}
+.wide{grid-column:1/-1}
+label{font-size:14px;font-weight:bold}
+input,select{width:100%;min-height:48px;padding:12px;border-radius:10px;border:1px solid #514448;background:#211d1f;color:#f2e9e7;font:inherit}
+input:focus,select:focus{outline:2px solid #a63d43}
+.counts{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.hint{font-size:12px;color:#c2b2b1;line-height:1.9;margin:8px 0}
+.counter{padding:11px 13px;background:#a63d432b;border-radius:10px;font-size:13px;line-height:1.9}
+.counter strong{color:#f2b8bb}
+.error,.status{display:none;padding:11px 13px;border-radius:9px;margin-top:13px;font-size:13px;line-height:1.9;overflow-wrap:anywhere}
+.error,.bad{background:#3a2022;color:#ffdfe0}
+.good{background:#183329;color:#c9f4df}
+.actions,.receiptActions,.adminActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+button{border:0;border-radius:10px;padding:13px 17px;font:inherit;cursor:pointer}
+button:disabled{opacity:.6;cursor:wait}
+.submit,.primary{flex:1;background:var(--red);color:#fff;font-weight:bold}
+.submit:hover,.primary:hover{background:var(--red2)}
+.secondary{background:#393033;color:#f0e6e4}
+.foot{text-align:center;font-size:12px;line-height:1.9;padding:0 20px 22px;color:#b6a5a4}
+#receiptArea{display:none;margin:18px 0}
+.receipt{background:#211d1f;border:2px solid var(--red);border-radius:16px;padding:22px}
+.receipt h2{text-align:center;color:var(--red);margin:0 0 8px}
+.receipt .small{text-align:center;font-size:12px;margin:0 0 18px}
+.receiptRows{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.receiptItem{border-bottom:1px dashed #5b484c;padding:10px 0;font-size:14px;overflow-wrap:anywhere}
+.receiptItem b{display:block;font-size:12px;color:#c4adad;margin-bottom:6px}
+.admin{padding:20px}
+.admin h2{margin-top:0;color:var(--red)}
+#adminResults{overflow-x:auto;margin-top:15px}
+table{width:100%;border-collapse:collapse;font-size:12px;white-space:nowrap}
+th,td{padding:9px;border:1px solid #665;text-align:right}
+th{background:#39282b}
+@media(max-width:560px){body{padding:12px 8px 25px}.grid,.counts,.receiptRows{grid-template-columns:1fr}.wide{grid-column:auto}form{padding:17px 14px}header{padding:22px 12px 18px}.receiptActions{flex-direction:column}}
+@media print{body{background:white;padding:0;color:#111}.panel,form,header,.foot,.admin,.receiptActions{display:none!important}#receiptArea{display:block!important}.receipt{background:white;color:#111;border:2px solid #333}.receipt h2{color:#333}.receiptItem b,.hint{color:#333}}
 </style>
 </head>
 <body>
 <main class="wrap">
-  <section class="panel">
-    <header>
-      <p class="eyebrow">ویژه ایام فاطمیه</p>
-      <h1>سوگوارهٔ حرمت</h1>
-      <p class="subtitle">فرم ثبت‌نام و انتخاب روز حضور</p>
-      <div class="ornament"></div>
-    </header>
-    <form id="regForm">
-      <div class="grid">
-        <div class="field">
-          <label for="fullname">نام و نام خانوادگی</label>
-          <input id="fullname" name="fullname" type="text" autocomplete="name" maxlength="90" required placeholder="نام کامل را وارد کنید">
-        </div>
-        <div class="field">
-          <label for="phone">شماره همراه</label>
-          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="(?:09\d{9}|۰۹[۰-۹]{9}|\+?98\d{10})" placeholder="مثلاً 09123456789" title="شماره همراه معتبر وارد کنید">
-        </div>
-        <div class="field wide">
-          <label for="day">روز حضور (از ۲۵ تا ۳۱ آبان)</label>
-          <select id="day" name="day" required>
-            <option value="">روز موردنظر را انتخاب کنید</option>
-            <option value="۲۵ آبان">۲۵ آبان</option><option value="۲۶ آبان">۲۶ آبان</option>
-            <option value="۲۷ آبان">۲۷ آبان</option><option value="۲۸ آبان">۲۸ آبان</option>
-            <option value="۲۹ آبان">۲۹ آبان</option><option value="۳۰ آبان">۳۰ آبان</option>
-            <option value="۳۱ آبان">۳۱ آبان</option>
-          </select>
-        </div>
-        <div class="field wide">
-          <label>تعداد همراهان</label>
-          <div class="counts">
-            <div class="field">
-              <label for="men">تعداد آقا</label>
-              <input id="men" name="men" type="number" min="0" max="6" step="1" required value="1">
-            </div>
-            <div class="field">
-              <label for="women">تعداد خانم</label>
-              <input id="women" name="women" type="number" min="0" max="6" step="1" required value="0">
-            </div>
-          </div>
-          <p class="counter">مجموع آقا و خانم: <strong id="total">۱ نفر</strong> — مجموع باید حداقل ۱ و حداکثر ۶ نفر باشد.</p>
-          <p class="hint">برای ثبت حضور یک نفر، یکی از شمارنده‌ها را ۱ و دیگری را ۰ بگذارید. وارد کردن صفر برای هر دو مورد پذیرفته نیست.</p>
-        </div>
-      </div>
-      <div id="error" class="error" role="alert"></div>
-      <div class="actions">
-        <button class="submit" type="submit">ثبت اطلاعات و دریافت رسید</button>
-        <button class="reset" type="reset">پاک کردن فرم</button>
-      </div>
-    </form>
-    <div class="foot">لطفاً پیش از ثبت نهایی، اطلاعات و تعداد افراد را بررسی کنید.</div>
-  </section>
 
-  <section id="receiptArea" aria-live="polite">
-    <div class="receipt" id="receipt">
-      <h2>رسید ثبت‌نام سوگوارهٔ حرمت</h2>
-      <p class="small">ویژه ایام فاطمیه · رسید ثبت اطلاعات</p>
-      <div class="receiptRows">
-        <div class="receiptItem"><b>نام و نام خانوادگی</b><span id="rName"></span></div>
-        <div class="receiptItem"><b>شماره همراه</b><span id="rPhone"></span></div>
-        <div class="receiptItem"><b>روز حضور</b><span id="rDay"></span></div>
-        <div class="receiptItem"><b>تعداد آقا</b><span id="rMen"></span></div>
-        <div class="receiptItem"><b>تعداد خانم</b><span id="rWomen"></span></div>
-        <div class="receiptItem"><b>مجموع افراد</b><span id="rTotal"></span></div>
-        <div class="receiptItem wide"><b>کد پیگیری</b><span id="rCode"></span></div>
-      </div>
-      <p class="hint" style="margin-top:16px">این رسید را برای مراجعه در روز انتخاب‌شده نزد خود نگه دارید.</p>
-    </div>
-    <div class="receiptActions">
-      <button class="download" id="downloadBtn" type="button">دانلود رسید</button>
-      <button id="printBtn" type="button">چاپ / ذخیره به PDF</button>
-    </div>
-  </section>
+<section class="panel">
+<header>
+<p class="eyebrow">ویژه ایام فاطمیه</p>
+<h1>سوگوارهٔ حرمت</h1>
+<p class="subtitle">فرم ثبت‌نام و انتخاب روز حضور</p>
+<div class="ornament"></div>
+</header>
+
+<form id="regForm">
+<div class="grid">
+<div class="field">
+<label for="fullname">نام و نام خانوادگی</label>
+<input id="fullname" name="fullname" type="text" maxlength="90" autocomplete="name" required placeholder="نام کامل را وارد کنید">
+</div>
+
+<div class="field">
+<label for="phone">شماره همراه</label>
+<input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="(?:09[0-9]{9}|۰۹[۰-۹]{9}|\+?98[0-9]{10})" placeholder="مثلاً 09123456789" title="شماره همراه معتبر وارد کنید">
+</div>
+
+<div class="field wide">
+<label for="day">روز حضور (از ۲۵ تا ۳۱ آبان)</label>
+<select id="day" name="day" required>
+<option value="">روز موردنظر را انتخاب کنید</option>
+<option value="۲۵ آبان">۲۵ آبان</option>
+<option value="۲۶ آبان">۲۶ آبان</option>
+<option value="۲۷ آبان">۲۷ آبان</option>
+<option value="۲۸ آبان">۲۸ آبان</option>
+<option value="۲۹ آبان">۲۹ آبان</option>
+<option value="۳۰ آبان">۳۰ آبان</option>
+<option value="۳۱ آبان">۳۱ آبان</option>
+</select>
+</div>
+
+<div class="field wide">
+<label>تعداد همراهان</label>
+<div class="counts">
+<div class="field">
+<label for="men">تعداد آقا</label>
+<input id="men" name="men" type="number" min="0" max="6" step="1" required value="1">
+</div>
+<div class="field">
+<label for="women">تعداد خانم</label>
+<input id="women" name="women" type="number" min="0" max="6" step="1" required value="0">
+</div>
+</div>
+<p class="counter">مجموع آقا و خانم: <strong id="total">۱ نفر</strong> — حداقل ۱ و حداکثر ۶ نفر</p>
+<p class="hint">برای ثبت یک نفر، یکی از شمارنده‌ها را ۱ و دیگری را ۰ بگذارید.</p>
+</div>
+</div>
+
+<div id="error" class="error" role="alert"></div>
+<div id="formStatus" class="status" role="status"></div>
+
+<div class="actions">
+<button class="submit" type="submit">ثبت اطلاعات و دریافت رسید</button>
+<button class="secondary" type="reset">پاک کردن فرم</button>
+</div>
+</form>
+
+<div class="foot">لطفاً پیش از ثبت نهایی، اطلاعات و تعداد افراد را بررسی کنید.</div>
+</section>
+
+<section id="receiptArea" aria-live="polite">
+<div class="receipt">
+<h2>رسید ثبت‌نام سوگوارهٔ حرمت</h2>
+<p class="small">ویژه ایام فاطمیه · رسید ثبت اطلاعات</p>
+<div class="receiptRows">
+<div class="receiptItem"><b>نام و نام خانوادگی</b><span id="rName"></span></div>
+<div class="receiptItem"><b>شماره همراه</b><span id="rPhone"></span></div>
+<div class="receiptItem"><b>روز حضور</b><span id="rDay"></span></div>
+<div class="receiptItem"><b>تعداد آقا</b><span id="rMen"></span></div>
+<div class="receiptItem"><b>تعداد خانم</b><span id="rWomen"></span></div>
+<div class="receiptItem"><b>مجموع افراد</b><span id="rTotal"></span></div>
+<div class="receiptItem wide"><b>کد پیگیری</b><span id="rCode"></span></div>
+</div>
+<p class="hint">این رسید را برای مراجعه در روز انتخاب‌شده نزد خود نگه دارید.</p>
+</div>
+<div class="receiptActions">
+<button class="primary" id="downloadBtn" type="button">دانلود رسید</button>
+<button class="secondary" id="printBtn" type="button">چاپ / ذخیره به PDF</button>
+</div>
+</section>
+
+<section class="panel admin">
+<div style="padding:20px">
+<h2>پنل مدیریت ثبت‌نام‌ها</h2>
+<p class="hint">برای مشاهده ثبت‌نام‌ها، رمز مدیریت را وارد کنید.</p>
+<div class="adminActions">
+<button class="primary" id="adminLogin" type="button">ورود به پنل مدیریت</button>
+<button class="secondary" id="refreshAdmin" type="button" hidden>به‌روزرسانی</button>
+<button class="secondary" id="adminLogout" type="button" hidden>خروج</button>
+</div>
+<div id="adminStatus" class="status" role="status"></div>
+<div id="adminResults"></div>
+</div>
+</section>
+
 </main>
+
 <script>
 (() => {
-  const form = document.getElementById('regForm');
-  const men = document.getElementById('men');
-  const women = document.getElementById('women');
-  const total = document.getElementById('total');
-  const error = document.getElementById('error');
-  const receiptArea = document.getElementById('receiptArea');
-  let currentReceipt = null;
+'use strict';
 
-  const persianDigits = value => String(value).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[Number(d)]);
-  function updateTotal() {
-    const m = Number(men.value), w = Number(women.value);
-    total.textContent = persianDigits((m + w) + ' نفر');
-    if (m + w > 6) {
-      error.style.display = 'block';
-      error.textContent = 'مجموع تعداد آقا و خانم نمی‌تواند بیشتر از ۶ نفر باشد.';
-    } else if (m + w < 1) {
-      error.style.display = 'block';
-      error.textContent = 'مجموع افراد باید حداقل ۱ نفر باشد.';
-    } else {
-      error.style.display = 'none';
-      error.textContent = '';
-    }
+const API = 'https://hormat-register.zargariimohsenn.workers.dev';
+const form = document.getElementById('regForm');
+const men = document.getElementById('men');
+const women = document.getElementById('women');
+const total = document.getElementById('total');
+const error = document.getElementById('error');
+const formStatus = document.getElementById('formStatus');
+const receiptArea = document.getElementById('receiptArea');
+
+let currentReceipt = null;
+let adminPassword = '';
+
+const faDigits = value =>
+  String(value).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[Number(d)]);
+
+function notice(element, message, type) {
+  element.textContent = message;
+  element.className = 'status ' + (type || '');
+  element.style.display = 'block';
+}
+
+function clearNotice(element) {
+  element.textContent = '';
+  element.className = 'status';
+  element.style.display = 'none';
+}
+
+function updateTotal() {
+  const m = Number(men.value);
+  const w = Number(women.value);
+  const sum = m + w;
+  total.textContent = faDigits(sum + ' نفر');
+
+  if (sum < 1 || sum > 6) {
+    error.textContent = 'مجموع آقا و خانم باید بین ۱ تا ۶ نفر باشد.';
+    error.style.display = 'block';
+  } else {
+    error.textContent = '';
+    error.style.display = 'none';
   }
-  men.addEventListener('input', updateTotal);
-  women.addEventListener('input', updateTotal);
-  form.addEventListener('reset', () => setTimeout(() => { updateTotal(); receiptArea.style.display='none'; }, 0));
+}
 
-  form.addEventListener('submit', event => {
-    event.preventDefault();
+men.addEventListener('input', updateTotal);
+women.addEventListener('input', updateTotal);
+
+form.addEventListener('reset', () => {
+  setTimeout(() => {
     updateTotal();
-    if (!form.reportValidity()) return;
-    const m = Number(men.value), w = Number(women.value);
-    if (!Number.isInteger(m) || !Number.isInteger(w) || m < 0 || w < 0 || m+w < 1 || m+w > 6) {
-      error.style.display = 'block';
-      error.textContent = 'تعداد افراد باید عدد صحیح باشد و مجموع آقا و خانم از ۶ نفر بیشتر نشود.';
-      return;
+    clearNotice(formStatus);
+  }, 0);
+});
+
+function showReceipt(data) {
+  document.getElementById('rName').textContent = data.name;
+  document.getElementById('rPhone').textContent = data.phone;
+  document.getElementById('rDay').textContent = data.day;
+  document.getElementById('rMen').textContent = faDigits(data.men);
+  document.getElementById('rWomen').textContent = faDigits(data.women);
+  document.getElementById('rTotal').textContent = faDigits(data.total + ' نفر');
+  document.getElementById('rCode').textContent = data.code;
+  receiptArea.style.display = 'block';
+  receiptArea.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+form.addEventListener('submit', async event => {
+  event.preventDefault();
+  updateTotal();
+
+  if (!form.reportValidity()) return;
+
+  const m = Number(men.value);
+  const w = Number(women.value);
+
+  if (!Number.isInteger(m) || !Number.isInteger(w) ||
+      m < 0 || w < 0 || m + w < 1 || m + w > 6) {
+    error.textContent = 'مجموع افراد باید بین ۱ تا ۶ نفر باشد.';
+    error.style.display = 'block';
+    return;
+  }
+
+  const data = {
+    name: document.getElementById('fullname').value.trim(),
+    phone: document.getElementById('phone').value.trim(),
+    day: document.getElementById('day').value,
+    men: m,
+    women: w,
+    total: m + w,
+    code: 'HR-' + crypto.randomUUID().slice(0, 8).toUpperCase()
+  };
+
+  if (!data.name) return;
+
+  const button = form.querySelector('.submit');
+  button.disabled = true;
+  button.textContent = 'در حال ذخیره اطلاعات...';
+  clearNotice(formStatus);
+  error.style.display = 'none';
+
+  try {
+    const response = await fetch(API + '/register', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json().catch(() => ({}));
+
+    if (!response.ok || result.ok === false) {
+      throw new Error(result.error || 'سرور ثبت‌نام را تأیید نکرد.');
     }
-    const data = {
-      name: document.getElementById('fullname').value.trim(),
-      phone: document.getElementById('phone').value.trim(),
-      day: document.getElementById('day').value,
-      men: m, women: w, total: m+w,
-      code: 'HR-' + Math.random().toString(36).slice(2,6).toUpperCase() + '-' + Date.now().toString().slice(-5)
-    };
-    if (!data.name) { document.getElementById('fullname').focus(); return; }
+
     currentReceipt = data;
-    document.getElementById('rName').textContent = data.name;
-    document.getElementById('rPhone').textContent = data.phone;
-    document.getElementById('rDay').textContent = data.day;
-    document.getElementById('rMen').textContent = persianDigits(data.men);
-    document.getElementById('rWomen').textContent = persianDigits(data.women);
-    document.getElementById('rTotal').textContent = persianDigits(data.total + ' نفر');
-    document.getElementById('rCode').textContent = data.code;
-    receiptArea.style.display = 'block';
-    receiptArea.scrollIntoView({behavior:'smooth', block:'start'});
+    showReceipt(data);
+    notice(formStatus, 'پاسخ موفق از سرور دریافت شد. رسید را نگه دارید.', 'good');
+    form.reset();
+
+  } catch (err) {
+    console.error(err);
+    notice(
+      formStatus,
+      'ثبت‌نام از طرف سرور تأیید نشد. رسید صادر نشد. اتصال و تنظیمات Worker باید بررسی شود.',
+      'bad'
+    );
+  } finally {
+    button.disabled = false;
+    button.textContent = 'ثبت اطلاعات و دریافت رسید';
+  }
+});
+
+document.getElementById('downloadBtn').addEventListener('click', () => {
+  if (!currentReceipt) return;
+  const d = currentReceipt;
+
+  const safe = value => String(value).replace(/[&<>"']/g, c => ({
+    '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+  }[c]));
+
+  const receiptHtml = `<!doctype html>
+<html lang="fa" dir="rtl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>رسید سوگواره حرمت</title>
+<style>
+body{font-family:Tahoma,Arial,sans-serif;background:#171516;padding:24px;color:#eee7e3}
+.card{max-width:650px;margin:auto;border:2px solid #a63d43;border-radius:16px;padding:24px;background:#211d1f}
+h1{text-align:center;color:#a63d43;font-size:25px}
+.row{padding:13px 2px;border-bottom:1px dashed #5b484c}
+.row b{display:inline-block;min-width:150px;color:#c4adad}
+</style></head><body><main class="card">
+<h1>رسید ثبت‌نام سوگوارهٔ حرمت</h1>
+<p>ویژه ایام فاطمیه</p>
+<div class="row"><b>نام و نام خانوادگی:</b> ${safe(d.name)}</div>
+<div class="row"><b>شماره همراه:</b> ${safe(d.phone)}</div>
+<div class="row"><b>روز حضور:</b> ${safe(d.day)}</div>
+<div class="row"><b>تعداد آقا:</b> ${faDigits(d.men)}</div>
+<div class="row"><b>تعداد خانم:</b> ${faDigits(d.women)}</div>
+<div class="row"><b>مجموع افراد:</b> ${faDigits(d.total + ' نفر')}</div>
+<div class="row"><b>کد پیگیری:</b> ${safe(d.code)}</div>
+<p>این رسید را برای مراجعه در روز انتخاب‌شده نزد خود نگه دارید.</p>
+</main></body></html>`;
+
+  const url = URL.createObjectURL(
+    new Blob(['\ufeff', receiptHtml], {type:'text/html;charset=utf-8'})
+  );
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'hormat-receipt-' + d.code + '.html';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+
+document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+const adminLogin = document.getElementById('adminLogin');
+const refreshAdmin = document.getElementById('refreshAdmin');
+const adminLogout = document.getElementById('adminLogout');
+const adminStatus = document.getElementById('adminStatus');
+const adminResults = document.getElementById('adminResults');
+
+async function loadRegistrations(password) {
+  notice(adminStatus, 'در حال دریافت ثبت‌نام‌ها...', '');
+  adminResults.replaceChildren();
+
+  const response = await fetch(API + '/admin', {
+    method: 'GET',
+    headers: {'Authorization':'Bearer ' + password}
   });
 
-  document.getElementById('downloadBtn').addEventListener('click', () => {
-    if (!currentReceipt) return;
-    const d = currentReceipt;
-    const safe = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    const receiptHtml = `<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>رسید سوگواره حرمت</title><style>body{font-family:Tahoma,Arial,sans-serif;background:#171516;padding:24px;color:#eee7e3}.card{max-width:650px;margin:auto;border:2px solid #8b3738;border-radius:16px;padding:24px;background:#211d1f}h1{text-align:center;color:#8b3738;font-size:26px}.sub{text-align:center;margin-bottom:25px}.row{padding:13px 2px;border-bottom:1px dashed #5b484c}.row b{display:inline-block;min-width:150px;color:#c4adad}.code{font-weight:bold;color:#8b3738}</style></head><body><main class="card"><h1>رسید ثبت‌نام سوگوارهٔ حرمت</h1><p class="sub">ویژه ایام فاطمیه</p><div class="row"><b>نام و نام خانوادگی:</b> ${safe(d.name)}</div><div class="row"><b>شماره همراه:</b> ${safe(d.phone)}</div><div class="row"><b>روز حضور:</b> ${safe(d.day)}</div><div class="row"><b>تعداد آقا:</b> ${persianDigits(d.men)}</div><div class="row"><b>تعداد خانم:</b> ${persianDigits(d.women)}</div><div class="row"><b>مجموع افراد:</b> ${persianDigits(d.total+' نفر')}</div><div class="row code"><b>کد پیگیری:</b> ${safe(d.code)}</div><p>این رسید را برای مراجعه در روز انتخاب‌شده نزد خود نگه دارید.</p></main></body></html>`;
-    const blob = new Blob(['\ufeff', receiptHtml], {type:'text/html;charset=utf-8'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url; a.download = 'hormat-receipt-' + d.code + '.html';
-    document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-  });
-  document.getElementById('printBtn').addEventListener('click', () => window.print());
-  updateTotal();
+  const result = await response.json().catch(() => ({}));
+
+  if (response.status === 401 || response.status === 403) {
+    throw new Error('رمز مدیریت اشتباه است.');
+  }
+  if (!response.ok) {
+    throw new Error(result.error || 'دریافت اطلاعات ناموفق بود.');
+  }
+
+  const records = Array.isArray(result) ? result : result.registrations;
+
+  if (!Array.isArray(records)) {
+    throw new Error('ساختار پاسخ Worker با سایت هماهنگ نیست.');
+  }
+
+  if (!records.length) {
+    notice(adminStatus, 'هنوز ثبت‌نامی ذخیره نشده است.', '');
+  } else {
+    notice(adminStatus, 'تعداد ثبت‌نام‌ها: ' + faDigits(records.length), 'good');
+
+    const table = document.createElement('table');
+    const thead = document.createElement('thead');
+    const hr = document.createElement('tr');
+
+    ['نام','شماره همراه','روز حضور','آقا','خانم','مجموع','کد پیگیری']
+      .forEach(label => {
+        const th = document.createElement('th');
+        th.textContent = label;
+        hr.appendChild(th);
+      });
+
+    thead.appendChild(hr);
+    table.appendChild(thead);
+
+    const tbody = document.createElement('tbody');
+
+    records.forEach(record => {
+      const tr = document.createElement('tr');
+      const values = [
+        record.name ?? record.fullname ?? '',
+        record.phone ?? '',
+        record.day ?? '',
+        record.men ?? 0,
+        record.women ?? 0,
+        record.total ?? '',
+        record.code ?? ''
+      ];
+
+      values.forEach(value => {
+        const td = document.createElement('td');
+        td.textContent = String(value);
+        tr.appendChild(td);
+      });
+
+      tbody.appendChild(tr);
+    });
+
+    table.appendChild(tbody);
+    adminResults.appendChild(table);
+  }
+
+  adminLogin.hidden = true;
+  refreshAdmin.hidden = false;
+  adminLogout.hidden = false;
+}
+
+adminLogin.addEventListener('click', async () => {
+  const password = prompt('رمز پنل مدیریت را وارد کنید:');
+  if (!password) return;
+
+  try {
+    await loadRegistrations(password);
+    adminPassword = password;
+  } catch (err) {
+    console.error(err);
+    adminPassword = '';
+    notice(adminStatus, err.message || 'خطا در اتصال به Worker.', 'bad');
+  }
+});
+
+refreshAdmin.addEventListener('click', async () => {
+  if (!adminPassword) return;
+  try {
+    await loadRegistrations(adminPassword);
+  } catch (err) {
+    notice(adminStatus, err.message || 'خطا در دریافت اطلاعات.', 'bad');
+  }
+});
+
+adminLogout.addEventListener('click', () => {
+  adminPassword = '';
+  adminResults.replaceChildren();
+  clearNotice(adminStatus);
+  adminLogin.hidden = false;
+  refreshAdmin.hidden = true;
+  adminLogout.hidden = true;
+});
+
+updateTotal();
 })();
 </script>
 </body>
